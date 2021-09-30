@@ -1,5 +1,7 @@
 # SimpleLogs
 
+![Unit Testing](https://github.com/javiersalcedopuyo/SimpleLogsSwift/workflows/UnitTests/badge.svg)
+
 A simple logging tool for Swift that consists on a wrapper around NSLog to add some extra functionalities.
 
 ## Usage
