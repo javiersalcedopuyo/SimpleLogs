@@ -62,4 +62,24 @@ final class SimpleLogsTests: XCTestCase
         XCTAssertEqual(words[6], String(LINE) + "):")
         XCTAssertEqual(words[words.count-2] + " " + words[words.count-1], MESSAGE)
     }
+
+    func testUnimplementedLog()
+    {
+        let MESSAGE  = "Hello World!"
+        let FUNCTION = #function
+        let FILE     = #fileID
+        let LINE     = #line + 2 // NOTE: Adjust offset if moving lines
+
+        let words = UNIMPLEMENTED("Hello World!")
+                        .components(separatedBy: " ")
+
+        XCTAssertGreaterThan(words.count, 0)
+
+        XCTAssertEqual(words[0], "🚧")
+        XCTAssertEqual(words[1], "UNIMPLEMENTED:")
+        XCTAssertEqual(words[2], FUNCTION)
+        XCTAssertEqual(words[3], "(" + FILE)
+        XCTAssertEqual(words[6], String(LINE) + "):")
+        XCTAssertEqual(words[words.count-2] + " " + words[words.count-1], MESSAGE)
+    }
 }

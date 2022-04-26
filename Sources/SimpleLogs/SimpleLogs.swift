@@ -42,3 +42,16 @@ public func ERROR(_ message: String,
     NSLog(result)
     return result
 }
+
+@discardableResult
+public func UNIMPLEMENTED(_ message: String,
+                            fn:      String = #function,
+                            file:    String = #fileID,
+                            line:    Int    = #line)
+-> String
+{
+    let result = "🚧 UNIMPLEMENTED: " + fn + " (" + file + " @ ln " + String(line) + "): " + message
+
+    NSLog(result)
+    return result
+}
