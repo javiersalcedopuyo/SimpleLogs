@@ -44,7 +44,7 @@ public func ERROR(_ message: String,
 }
 
 @discardableResult
-public func UNIMPLEMENTED(_ message: String,
+public func UNIMPLEMENTED(_ message: String = "",
                             fn:      String = #function,
                             file:    String = #fileID,
                             line:    Int    = #line)
